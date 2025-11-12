@@ -1,6 +1,5 @@
-export interface ButtonProps {
-  type?: "button" | "submit" | "reset";
-  name: string;
-  onClick?: () => void;
-  disabled?: boolean;
+export interface CounterProps {
+  counter: number;
+  onPlusClick: () => void;
+  onMinusClick: () => void;
 }

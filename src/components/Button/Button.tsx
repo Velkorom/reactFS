@@ -1,21 +1,31 @@
-import "./styles.css";
-import { type ButtonProps } from "./types";
+import { ButtonComponent } from "./styles";
+import type { ButtonProps } from "./types";
+
+// interface ButtonProps {
+//   type: "button" | "submit" | "reset";
+//   name: string;
+//   onClick: () => void;
+//   disabled: boolean;
+// }
 
 function Button({
   type = "button",
   name,
   onClick,
   disabled = false,
+  isDanger
 }: ButtonProps) {
   return (
-    <button
+    <ButtonComponent
       className="button"
       disabled={disabled}
       type={type}
       onClick={onClick}
+      isDanger={isDanger}
     >
       {name}
-    </button>
+    </ButtonComponent>
   );
 }
+
 export default Button;
