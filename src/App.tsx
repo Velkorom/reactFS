@@ -6,8 +6,14 @@
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
 //import Lesson10 from "lessons/Lesson10/Lesson10";
+
+import Layout from "components/Layout/Layout";
 import GlobalStyles from "components/styles/GlobalStyles";
-import Lesson12 from "lessons/Lesson12/Lesson12";
+import About from "pages/About/About";
+import Home from "pages/Home/Home";
+import Users from "pages/Users/Users";
+import { BrowserRouter, Routes,  Route} from "react-router-dom";
+//import Lesson12 from "lessons/Lesson12/Lesson12";
 
 // Импорты домашних работ
 // import Homework07 from "homeworks/Homework07/Homework07";
@@ -15,8 +21,20 @@ import Lesson12 from "lessons/Lesson12/Lesson12";
 
 function App() {
   return (
-    <>
-      <GlobalStyles />
+    
+    <BrowserRouter>
+      <GlobalStyles/>
+            <Layout>
+        {/* Routes - собирает все маршруты приложение */}
+        <Routes>
+          {/* Route - компонент, в который передаётся маршрут и контент */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<Users />} />
+        </Routes>
+      </Layout>
+
       {/* Лекция 6 - TypeScript */}
       {/* <Lesson06 /> */}
 
@@ -33,8 +51,8 @@ function App() {
 
       {/* Лекция 10 - useEffect */}
       {/*<Lesson10 />*/}
-      <Lesson12 />
-    </>
+      {/*<Lesson12 />*/}
+    </BrowserRouter>
   );
 }
 
